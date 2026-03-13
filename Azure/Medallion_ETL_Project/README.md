@@ -113,3 +113,9 @@ Cleaning examples:
 
 **Transformation Example**
 ![Transformation Example](images/transformation_7.jpg)
+
+**Pipeline Runtime**
+![Pipeline Runtime](images/pipeline_runtime.jpg)
+
+**Final Aggregated Gold layer data**
+![Pipeline Runtime](images/final_aggregated_data.jpg)
