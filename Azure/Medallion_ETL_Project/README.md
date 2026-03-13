@@ -60,11 +60,29 @@ Blob Storage (Gold Layer)
 
 ## Source Data Understanding:
 - A very small & simple Sales data
-- Problems intentionally included
+
+Problems intentionally included
 
 | Problem | Example |
 | --- | --- |
 | Duplicate Order | order_id 1006 |
 | Missing customer | order_id 1005 |
+| Missing customer | order_id 1005 |
+| Missing customer | order_id 1005 |
+| Missing customer | order_id 1005 |
+| Missing customer | order_id 1005 |
+| Missing customer | order_id 1005 |
+
+
+| Problem                | Example       |
+| ---------------------- | ------------- |
+| Duplicate order        | order_id 1006 |
+| Missing customer       | order_id 1005 |
+| Invalid price          | `abc`         |
+| Negative quantity      | -1            |
+| Missing city           | order 1008    |
+| Missing payment method | order 1009    |
+| Missing order_date     | order 1012    |
+
 
 ## Now, I will represent major steps of my ETL in visual screenshots:
