@@ -58,21 +58,12 @@ Aggregation Pipeline
    ▼
 Blob Storage (Gold Layer)
 
+
+
 ## Source Data Understanding:
 - A very small & simple Sales data
 
 Problems intentionally included
-
-| Problem | Example |
-| --- | --- |
-| Duplicate Order | order_id 1006 |
-| Missing customer | order_id 1005 |
-| Missing customer | order_id 1005 |
-| Missing customer | order_id 1005 |
-| Missing customer | order_id 1005 |
-| Missing customer | order_id 1005 |
-| Missing customer | order_id 1005 |
-
 
 | Problem                | Example       |
 | ---------------------- | ------------- |
@@ -84,5 +75,12 @@ Problems intentionally included
 | Missing payment method | order 1009    |
 | Missing order_date     | order 1012    |
 
+Cleaning examples:
+- remove duplicates
+- fix null values
+- remove invalid rows
+- correct datatypes
 
-## Now, I will represent major steps of my ETL in visual screenshots:
+## To move Bronze → Silver with cleaning transformations in Azure Data Factory, I used Mapping Data Flow.
+
+## Now, I will represent steps of Transformations in visual screenshots:
