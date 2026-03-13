@@ -10,24 +10,24 @@ Although, this looks and seems very beginner level basic ETL project, however th
 
 ## Pipeline Architecture
 
-Step 1 — Source Data\
-A CSV file containing sample retail sales data is stored in the Raw container of Azure Blob Storage.\
+Step 1 — Source Data
+A CSV file containing sample retail sales data is stored in the Raw container of Azure Blob Storage.
 
-Step 2 — Azure Data Factory Pipeline\
-A pipeline is created in ADF with a Copy Activity to move data from the raw container to the processed container.\
+Step 2 — Azure Data Factory Pipeline
+A pipeline is created in ADF with a Copy Activity to move data from the raw container to the processed container.
 
-Step 3 — Linked Services\
-Two linked services were configured:\
+Step 3 — Linked Services
+Two linked services were configured:
 - Source Blob Storage
 - Destination Blob Storage
 
-Step 4 — Dataset Configuration\
-Datasets were created for:\
+Step 4 — Dataset Configuration
+Datasets were created for:
 - Source CSV file
 - Destination CSV file
 
-Step 5 — Data Movement\
-ADF Copy Activity performs the following:\
+Step 5 — Data Movement
+ADF Copy Activity performs the following:
 - Reads CSV file
 - Preserves schema
 - Copies file to processed storage container
