@@ -4,7 +4,13 @@ Although, this looks and seems very beginner level basic ETL project, however th
 
 - I learnt the navigational aspects of not only Azure cloud account, but also services like Datafactory and Azure Storage.
 
-- With this project, I made sure that I understand core behavior and functionalities of ETL on cloud, core concepts like Resource groups, Integration runtime, Datasets, Linked Service, Blob containers.
+- With this project, I made sure that I understand core behavior and functionalities of ETL on cloud, core concepts like:
+- Resource groups
+- Integration runtime
+- Datasets
+- Linked Service
+- Blob containers
+- Data Flow
 
 - Progressing one step further, I also tried advnaced concepts like Medallion archirecture, transformations & aggregations in Datafactory, output file partitions.
 
@@ -31,5 +37,29 @@ ADF Copy Activity performs the following:
 - Reads CSV file
 - Preserves schema
 - Copies file to processed storage container
+
+Messy CSV
+   │
+   ▼
+Blob Storage (Bronze Layer)
+   │
+   ▼
+Azure Data Factory
+   │
+   ▼
+Data Cleaning Logic
+   │
+   ▼
+Blob Storage (Silver Layer)
+   │
+   ▼
+Aggregation Pipeline
+   │
+   ▼
+Blob Storage (Gold Layer)
+
+## Source Data Understanding:
+- A very small & simple Sales data
+
 
 ## Now, I will represent major steps of my ETL in visual screenshots:
