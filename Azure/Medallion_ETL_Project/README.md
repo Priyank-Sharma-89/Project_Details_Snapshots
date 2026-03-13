@@ -39,12 +39,14 @@ ADF Copy Activity performs the following:
 - Copies file to processed storage container
 
 ```mermaid
-graph TD
-CSV-->Blob Storage (Bronze Layer)
-Blob Storage (Bronze Layer)-->ADF (Data cleaning logic)
-ADF (Data cleaning logic)-->Blob Storage (Silver Layer)
-Blob Storage (Silver Layer)-->ADF (Data Aggregation)
-ADF (Data Aggregation)-->Blob Storage (Gold Layer)
+flowchart TD
+
+    A[Source CSV Files] --> B[Bronze Layer<br>Raw Data Storage]
+    B --> C[ADF Data Flow<br>Data Cleaning & Validation]
+    C --> D[Silver Layer<br>Cleaned & Structured Data]
+    D --> E[ADF Data Flow<br>Aggregation & Business Metrics]
+    E --> F[Gold Layer<br>Analytics Ready Data]
+
 ```
 
 ## Source Data Understanding:
