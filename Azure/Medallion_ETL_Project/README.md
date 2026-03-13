@@ -81,4 +81,35 @@ Cleaning examples:
 
 ## Now, I will represent the ETL & steps of Transformations in visual screenshots:
 
-![Alt text](images/bronze_layer.jpg)
+**Bronze Layer Storage**
+![Bronze Layer](images/bronze_layer.jpg)
+
+**Created Dataset for Blob storage**
+![create_dataset_for_blob_storage](images/create_dataset_for_blob_storage.jpg)
+
+**Created Linked Service**
+![creating_linkedservice](images/creating_linkedservice.jpg)
+
+**Silver Layer after Transformation**
+![silver_layer_after_trans](images/silver_layer_after_trans.jpg)
+
+**Transformation Example**
+![Transformation Example](images/transformation_1.jpg)
+
+**Transformation Example**
+![Transformation Example](images/transformation_2.jpg)
+
+**Transformation Example**
+![Transformation Example](images/transformation_3.jpg)
+
+**Transformation Example**
+![Transformation Example](images/transformation_4.jpg)
+
+**Transformation Example**
+![Transformation Example](images/transformation_5.jpg)
+
+**Transformation Example**
+![Transformation Example](images/transformation_6.jpg)
+
+**Transformation Example**
+![Transformation Example](images/transformation_7.jpg)
