@@ -58,7 +58,8 @@ Aggregation Pipeline
    ▼
 Blob Storage (Gold Layer)
 
-
+Bronze Layer
+images/bronze_layer.jpg
 
 ## Source Data Understanding:
 - A very small & simple Sales data
