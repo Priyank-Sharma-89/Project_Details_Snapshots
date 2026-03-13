@@ -38,34 +38,13 @@ ADF Copy Activity performs the following:
 - Preserves schema
 - Copies file to processed storage container
 
-Messy CSV
-   │
-   ▼
-Blob Storage (Bronze Layer)
-   │
-   ▼
-Azure Data Factory
-   │
-   ▼
-Data Cleaning Logic
-   │
-   ▼
-Blob Storage (Silver Layer)
-   │
-   ▼
-Aggregation Pipeline
-   │
-   ▼
-Blob Storage (Gold Layer)
-
 ```mermaid
 graph TD
-CSV-->Blob
-Blob-->ADF
-ADF-->Bronze
+CSV-->Blob Storage (bronze layer)
+Blob-->ADF (Data cleaning logic)
 Bronze-->Silver
-Silver-->Gold
-Gold-->PowerBI
+Silver-->ADF (aggregations)
+ADF-->Blob Storage (gold layer)
 ```
 
 ## Source Data Understanding:
