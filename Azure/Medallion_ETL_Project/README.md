@@ -40,11 +40,11 @@ ADF Copy Activity performs the following:
 
 ```mermaid
 graph TD
-CSV-->Blob Storage Bronze Layer
-Blob-->ADF
-Bronze-->Silver
-Silver-->ADF
-ADF-->Blob Storage
+CSV-->Blob Storage (Bronze Layer)
+Blob Storage (Bronze Layer)-->ADF (Data cleaning logic)
+ADF (Data cleaning logic)-->Blob Storage (Silver Layer)
+Blob Storage (Silver Layer)-->ADF (Data Aggregation)
+ADF (Data Aggregation)-->Blob Storage (Gold Layer)
 ```
 
 ## Source Data Understanding:
