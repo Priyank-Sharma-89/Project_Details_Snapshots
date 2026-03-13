@@ -81,6 +81,6 @@ Cleaning examples:
 - remove invalid rows
 - correct datatypes
 
-** To move Bronze → Silver with cleaning transformations in Azure Data Factory, I used Mapping Data Flow. **
+**To move Bronze → Silver with cleaning transformations in Azure Data Factory, I used Mapping Data Flow.**
 
 ## Now, I will represent steps of Transformations in visual screenshots:
