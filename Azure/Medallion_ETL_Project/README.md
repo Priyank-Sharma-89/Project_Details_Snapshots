@@ -58,10 +58,25 @@ Aggregation Pipeline
    ▼
 Blob Storage (Gold Layer)
 
-![Alt text](images/bronze_layer.jpg)
+```mermaid
+graph TD
+CSV-->Blob
+Blob-->ADF
+ADF-->Bronze
+Bronze-->Silver
+Silver-->Gold
+Gold-->PowerBI
+```
 
 ## Source Data Understanding:
 - A very small & simple Sales data
+
+| Layer  | Purpose                         |
+| ------ | ------------------------------- |
+| Bronze | Raw data                        |
+| Silver | Clean structured data           |
+| Gold   | Business-ready analytics tables |
+
 
 Problems intentionally included
 
@@ -83,4 +98,6 @@ Cleaning examples:
 
 **To move Bronze → Silver with cleaning transformations in Azure Data Factory, I used Mapping Data Flow.**
 
-## Now, I will represent steps of Transformations in visual screenshots:
+## Now, I will represent the ETL & steps of Transformations in visual screenshots:
+
+![Alt text](images/bronze_layer.jpg)
