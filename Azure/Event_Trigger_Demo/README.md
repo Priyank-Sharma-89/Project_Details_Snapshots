@@ -15,25 +15,19 @@
 ![3_sql_db_config](images/3_sql_db_config.jpg)
 
 **SQL Server Deployment complete**
-![4_sql server deployment complete](images/4_sql server deployment complete.jpg)
+![4_sql server deployment complete](images/4_sql_server_deployment_complete.jpg)
 
-**New blob Container created for this demo**
-![1_new_container_created](images/1_new_container_created)
+**SQL Query to create destination table schema**
+![5_demo_sql_table_created](images/5_demo_sql_table_created.jpg)
 
-**New blob Container created for this demo**
-![1_new_container_created](images/1_new_container_created)
+**Table schema created**
+![6_sqldb_demo_table_final](images/6_sqldb_demo_table_final.jpg)
 
-**New blob Container created for this demo**
-![1_new_container_created](images/1_new_container_created)
+**Wildcard filepath for Trigger config**
+![7_wildcard_file_path](images/7_wildcard_file_path.jpg)
 
-**New blob Container created for this demo**
-![1_new_container_created](images/1_new_container_created)
+**Trigger configuration**
+![8_event_trigger_created](images/8_event_trigger_created.jpg)
 
-**New blob Container created for this demo**
-![1_new_container_created](images/1_new_container_created)
-
-**New blob Container created for this demo**
-![1_new_container_created](images/1_new_container_created)
-
-**New blob Container created for this demo**
-![1_new_container_created](images/1_new_container_created)
+**Data successfully copied in SQL Table**
+![11_pipeline_success](images/11_pipeline_success.jpg)
