@@ -31,25 +31,45 @@ Step 6: Again, step 3 & 5 repeated for moving data from silver to gold layer.
 ## Now, I will represent the ETL & steps of Transformations in visual screenshots:
 
 **Catalog Database created**
-![04_catalog_db_created](images/04_catalog_db_created.png)<br><br><br>
+![04_catalog_db_created](images/04_catalog_db_created.png)
+
+
 **Creating crawler for bronze layer**
-![05_creating_bronze_crawler](images/05_creating_bronze_crawler.png)<br><br><br>
+![05_creating_bronze_crawler](images/05_creating_bronze_crawler.png)
+
+
 **Assigned IAM role to glue**
-![06_assigned_IAMrole_for_glue](images/06_assigned_IAMrole_for_glue.png)<br><br><br>
+![06_assigned_IAMrole_for_glue](images/06_assigned_IAMrole_for_glue.png)
+
+
 **Destination Table**
-![07_destination_table_selection](images/07_destination_table_selection.png)<br><br><br>
+![07_destination_table_selection](images/07_destination_table_selection.png)
+
+
 **Final config view of Crawler**
-![08_final_view_of_config](images/08_final_view_of_config.png)<br><br><br>
+![08_final_view_of_config](images/08_final_view_of_config.png)
+
+
 **Crawler Run**
-![09_crawler_run_done](images/09_crawler_run_done.png)<br><br><br>
+![09_crawler_run_done](images/09_crawler_run_done.png)
+
+
 **Table created**
-![10_table_created](images/10_table_created.png)<br><br><br>
+![10_table_created](images/10_table_created.png)
+
+
 **Table schema**
-![11_table_schema](images/11_table_schema.png)<br><br><br>
+![11_table_schema](images/11_table_schema.png)
+
+
 **Athena first launch view**
-![12_athena_first_view](images/12_athena_first_view.png)<br><br><br>
+![12_athena_first_view](images/12_athena_first_view.png)
+
+
 **Querying Bronze layer data**
-![13_athena_query_output](images/13_athena_query_output.png)<br><br><br>
+![13_athena_query_output](images/13_athena_query_output.png)
+
+
 **Started creating ETL**
 ![14_etl_flow_01](images/14_etl_flow_01.png)
 
@@ -57,22 +77,36 @@ Step 6: Again, step 3 & 5 repeated for moving data from silver to gold layer.
 
 ![14_etl_flow_03](images/14_etl_flow_03.png)
 
-![14_etl_flow_04](images/14_etl_flow_04.png)<br><br><br>
+![14_etl_flow_04](images/14_etl_flow_04.png)
+
+
 
 **After creating this first, basic simple ETL job, when I ran it, I faced my first error in AWS**
 ![14_etl_flow_05](images/14_etl_flow_05.png)
 
+
 **This error was due to incomplete/improper permissions attached to Glue IAM role. I fixed this issue, by giving full read/write permission to IAM role. While finding solutions to fix this issue, I got to know that in maximum possible production scenarios, it is not recommended to give full permissions to any service related IAM role. Here I give it to just continue with demo project.**
 ![15_fixing_iam_issue](images/15_fixing_iam_issue.png)
 
-![15_fixing_iam_issue_02](images/15_fixing_iam_issue_02.png)<br><br><br>
+![15_fixing_iam_issue_02](images/15_fixing_iam_issue_02.png)
+
+
+
 **After this fix, my ETL job ran successfully**
-![16_etl_job_success](images/16_etl_job_success.png)<br><br><br>
+![16_etl_job_success](images/16_etl_job_success.png)
+
+
 **Silver layer output after job run**
-![17_silver_layer_output](images/17_silver_layer_output.png)<br><br><br>
-![18_silver_layer_crawler_table](images/18_silver_layer_crawler_table.png)<br><br>
-**Query error: When I tried to view the data in Athena (this is the very first time I was using Athena), I got this error**<br>
-**Initially I could not understand the exact reason of this error, however I pasted the error in chatgpt, and immediately got to know the reason**<br>
+![17_silver_layer_output](images/17_silver_layer_output.png)
+
+![18_silver_layer_crawler_table](images/18_silver_layer_crawler_table.png)
+
+
+**Query error: When I tried to view the data in Athena (this is the very first time I was using Athena), I got this error**
+
+**Initially I could not understand the exact reason of this error, however I pasted the error in chatgpt, and immediately got to know the reason**
+
 **It was caused due to double quotes used in where clause. In Athena (Presto SQL engine), double quotes are treated as column name, not string literal, so Athena thinks this is a column name, not a string value.**
+
 **That’s why error says: Column 'cust1073' cannot be resolved**
-![17_silver_layer_output](images/17_silver_layer_output.png)<br><br><br>
+![19_query_error](images/19_query_error.png)<br><br><br>
