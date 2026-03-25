@@ -1,121 +1,33 @@
-# Azure Data Factory Medallion Architecture ETL Pipeline
+# Event Based Pipeline Trigger
 
-Although, this looks and seems very beginner level basic ETL project, however this project was capable enough to familiarize me so well with lot of core concepts and Datafactory as tool.
-
-- I learnt the navigational aspects of not only Azure cloud account, but also services like Datafactory and Azure Storage.
-
-- With this project, I made sure that I understand core behavior and functionalities of ETL on cloud, core concepts like:
-- Resource groups
-- Integration runtime
-- Datasets
-- Linked Service
-- Blob containers
-- Data Flow
-
-- Progressing one step further, I also tried advnaced concepts like Medallion archirecture, transformations & aggregations in Datafactory, output file partitions.
-
-## Pipeline Architecture
-
-Step 1 — Source Data
-A CSV file containing sample retail sales data is stored in the Raw container of Azure Blob Storage.
-
-Step 2 — Azure Data Factory Pipeline
-A pipeline is created in ADF with a Copy Activity to move data from the raw container to the processed container.
-
-Step 3 — Linked Services
-Two linked services were configured:
-- Source Blob Storage
-- Destination Blob Storage
-
-Step 4 — Dataset Configuration
-Datasets were created for:
-- Source CSV file
-- Destination CSV file
-
-Step 5 — Data Movement
-ADF Copy Activity performs the following:
-- Reads CSV file
-- Preserves schema
-- Copies file to processed storage container
-
-```mermaid
-flowchart TD
-
-    A[Source CSV Files] --> B[Bronze Layer<br>Raw Data Storage]
-    B --> C[ADF Data Flow<br>Data Cleaning & Validation]
-    C --> D[Silver Layer<br>Cleaned & Structured Data]
-    D --> E[ADF Data Flow<br>Aggregation & Business Metrics]
-    E --> F[Gold Layer<br>Analytics Ready Data]
-
-```
-
-## Source Data Understanding:
-- A very small & simple Sales data
-
-| Layer  | Purpose                         |
-| ------ | ------------------------------- |
-| Bronze | Raw data                        |
-| Silver | Clean structured data           |
-| Gold   | Business-ready analytics tables |
+![Bronze Layer](images/thumbnail.png)
 
 
-Problems intentionally included
+## Pipeline Steps & Configurations:
 
-| Problem                | Example       |
-| ---------------------- | ------------- |
-| Duplicate order        | order_id 1006 |
-| Missing customer       | order_id 1005 |
-| Invalid price          | `abc`         |
-| Negative quantity      | -1            |
-| Missing city           | order 1008    |
-| Missing payment method | order 1009    |
-| Missing order_date     | order 1012    |
+**New blob Container created for this demo**
+![1_new_container_created](images/1_new_container_created.jpg)
 
-Cleaning examples:
-- remove duplicates
-- fix null values
-- remove invalid rows
-- correct datatypes
+**Creating Azure SQL DB Server**
+![2_creating-sqldb-server](images/2_creating-sqldb-server.jpg)
 
-**To move Bronze → Silver with cleaning transformations in Azure Data Factory, I used Mapping Data Flow.**
+**SQL DB Config**
+![3_sql_db_config](images/3_sql_db_config.jpg)
 
-## Now, I will represent the ETL & steps of Transformations in visual screenshots:
+**SQL Server Deployment complete**
+![4_sql server deployment complete](images/4_sql_server_deployment_complete.jpg)
 
-**Bronze Layer Storage**
-![Bronze Layer](images/bronze_layer.jpg)
+**SQL Query to create destination table schema**
+![5_demo_sql_table_created](images/5_demo_sql_table_created.jpg)
 
-**Created Dataset for Blob storage**
-![create_dataset_for_blob_storage](images/create_dataset_for_blob_storage.jpg)
+**Table schema created**
+![6_sqldb_demo_table_final](images/6_sqldb_demo_table_final.jpg)
 
-**Created Linked Service**
-![creating_linkedservice](images/creating_linkedservice.jpg)
+**Wildcard filepath for Trigger config**
+![7_wildcard_file_path](images/7_wildcard_file_path.jpg)
 
-**Silver Layer after Transformation**
-![silver_layer_after_trans](images/silver_layer_after_trans.jpg)
+**Trigger configuration**
+![8_event_trigger_created](images/8_event_trigger_created.jpg)
 
-**Transformation Example**
-![Transformation Example](images/transformation_1.jpg)
-
-**Transformation Example**
-![Transformation Example](images/transformation_2.jpg)
-
-**Transformation Example**
-![Transformation Example](images/transformation_3.jpg)
-
-**Transformation Example**
-![Transformation Example](images/transformation_4.jpg)
-
-**Transformation Example**
-![Transformation Example](images/transformation_5.jpg)
-
-**Transformation Example**
-![Transformation Example](images/transformation_6.jpg)
-
-**Transformation Example**
-![Transformation Example](images/transformation_7.jpg)
-
-**Pipeline Runtime**
-![Pipeline Runtime](images/pipeline_runtime.JPG)
-
-**Final Aggregated Gold layer data**
-![Pipeline Runtime](images/final_aggregated_data.JPG)
+**Data successfully copied in SQL Table**
+![11_pipeline_success](images/11_pipeline_success.jpg)
