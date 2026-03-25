@@ -23,6 +23,7 @@ Just like Azure Medallion project, this is doing exactly the same use-case.
 | 05-01-2024 |
 | 2024/01/05 |
 | (blank) |
+I will standardize them to one format: yyyy-mm-dd and also handle blank dates
 
 
 **Medallion Layer Setup**
