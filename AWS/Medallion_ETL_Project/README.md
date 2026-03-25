@@ -16,7 +16,7 @@ Just like Azure Medallion project, this is doing exactly the same use-case.
 
 ## ETL Pipeline Flow:
 
-Step 1: <br>
-Step 1: <br>
+Step 1: Raw uncleaned csv data file is uploaded in bronze layer of S3 storage.<br>
+Step 2: Glue Database is created, to hold the schema and structure of this data.<br>
 
 ## Now, I will represent the ETL & steps of Transformations in visual screenshots:
