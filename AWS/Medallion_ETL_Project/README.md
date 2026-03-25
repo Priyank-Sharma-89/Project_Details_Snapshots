@@ -12,6 +12,6 @@
 | Silver | Clean structured data           |
 | Gold   | Business-ready analytics tables |
 
-
+![02_medallian_setup](images/02_medallian_setup.png)
 
 ## Now, I will represent the ETL & steps of Transformations in visual screenshots:
