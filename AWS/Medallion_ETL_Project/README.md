@@ -33,4 +33,25 @@ Step 6: Again, step 3 & 5 repeated for moving data from silver to gold layer.
 **Catalog Database created**
 ![04_catalog_db_created](images/04_catalog_db_created.png)<br><br><br>
 **Creating crawler for bronze layer**
-![05_creating_bronze_crawler](images/05_creating_bronze_crawler.png)
+![05_creating_bronze_crawler](images/05_creating_bronze_crawler.png)<br><br><br>
+**Assigned IAM role to glue**
+![06_assigned_IAMrole_for_glue](images/06_assigned_IAMrole_for_glue.png)<br><br><br>
+**Destination Table**
+![07_destination_table_selection](images/07_destination_table_selection.png)<br><br><br>
+**Final config view of Crawler**
+![08_final_view_of_config](images/08_final_view_of_config.png)<br><br><br>
+**Crawler Run**
+![09_crawler_run_done](images/09_crawler_run_done.png)<br><br><br>
+**Table created**
+![10_table_created](images/10_table_created.png)<br><br><br>
+**Table schema**
+![11_table_schema](images/11_table_schema.png)<br><br><br>
+**Athena first launch view**
+![12_athena_first_view](images/12_athena_first_view.png)<br><br><br>
+**Querying Bronze layer data**
+![13_athena_query_output](images/13_athena_query_output.png)<br><br><br>
+**Started creating ETL**
+![14_etl_flow_01](images/14_etl_flow_01.png)
+![14_etl_flow_02](images/14_etl_flow_02.png)
+![14_etl_flow_03](images/14_etl_flow_03.png)
+![14_etl_flow_04](images/14_etl_flow_04.png)
