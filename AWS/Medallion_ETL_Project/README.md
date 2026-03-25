@@ -129,3 +129,12 @@ Bronze Table count
 
 Silver Table count
 ![21_etl_changes_03](images/21_etl_changes_03.png)
+
+
+**Apart from row count, I verified further by analyzing one record, if filter worked properly**
+
+CUST1003 data in bronze table
+![](images/21_etl_changes_04.png)
+
+CUST1003 data in silver table, notice 1 row with blank value in product column is filtered out
+![](images/21_etl_changes_05.png)
