@@ -26,6 +26,28 @@ Just like Azure Medallion project, this is doing exactly the same use-case.
 
 I will standardize them to one format: yyyy-mm-dd and also handle blank dates
 
+**2. NULL Values**
+
+Some rows have:
+- product = NULL
+- quantity = NULL
+
+Task: remove or impute
+
+**3. BLANK Values**
+
+Some rows have:
+- city = ""
+- order_date = ""
+
+Task: Treat blank as NULL, clean or filter
+
+**4. Data Type Issues**
+- quantity may be null → needs casting
+- order_date string → convert to date
+
+Task: Treat blank as NULL, clean or filter
+
 
 **Medallion Layer Setup**
 ![02_medallian_setup](images/02_medallian_setup.png)
