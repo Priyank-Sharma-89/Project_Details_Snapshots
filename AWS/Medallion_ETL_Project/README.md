@@ -138,3 +138,36 @@ CUST1003 data in bronze table
 
 CUST1003 data in silver table, notice 1 row with blank value in product column is filtered out
 ![](images/21_etl_changes_05.png)
+
+
+**Now, rest of the transformation in ETL**
+![](images/21_etl_changes_06.png)
+
+![](images/21_etl_changes_07.png)
+
+![](images/21_etl_changes_08.png)
+
+
+**Now, here I faced one more error, when I run this new recreated ETL job**
+![](images/21_etl_changes_09.png)
+
+
+**On debug, I got to know this is due to one sql built-in function, which is not compatible with sql transformation editor in glue**
+![](images/21_etl_changes_10.png)
+
+Moving further
+![](images/21_etl_changes_11.png)
+
+Gold layer data aggregation job
+![](images/21_etl_changes_12.png)
+
+
+Gold layer aggregated Parquet output
+![](images/21_etl_changes_13.png)
+
+
+Gold layer table created in Database via Catalog
+![](images/22_gold_layer_table.png)
+
+
+So, as you can observer, this AWS project, gave me more learning apart from usual ETL pipeline creation. I was thinking that it will be as easy or smooth as Azure, or atleast will be a similar experience, but AWS taught me some things really well by throwing notorious error here and there. And honestly, I really felt happy, because I learnt how to tackle errors, how I can handle them, how to fix them etc.
