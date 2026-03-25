@@ -52,6 +52,21 @@ Step 6: Again, step 3 & 5 repeated for moving data from silver to gold layer.
 ![13_athena_query_output](images/13_athena_query_output.png)<br><br><br>
 **Started creating ETL**
 ![14_etl_flow_01](images/14_etl_flow_01.png)
+
 ![14_etl_flow_02](images/14_etl_flow_02.png)
+
 ![14_etl_flow_03](images/14_etl_flow_03.png)
-![14_etl_flow_04](images/14_etl_flow_04.png)
+
+![14_etl_flow_04](images/14_etl_flow_04.png)<br><br><br>
+
+**After creating this first, basic simple ETL job, when I ran it, I faced my first error in AWS**
+![14_etl_flow_05](images/14_etl_flow_05.png)
+
+**This error was due to incomplete/improper permissions attached to Glue IAM role. I fixed this issue, by giving full read/write permission to IAM role. While finding solutions to fix this issue, I got to know that in maximum possible production scenarios, it is not recommended to give full permissions to any service related IAM role. Here I give it to just continue with demo project.**
+![15_fixing_iam_issue](images/15_fixing_iam_issue.png)
+
+![15_fixing_iam_issue_02](images/15_fixing_iam_issue_02.png)
+
+
+**After this fix, my ETL job ran successfully**
+![16_etl_job_success](images/16_etl_job_success.png)
