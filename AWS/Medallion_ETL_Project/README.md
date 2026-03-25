@@ -31,7 +31,6 @@ Step 6: Again, step 3 & 5 repeated for moving data from silver to gold layer.
 ## Now, I will represent the ETL & steps of Transformations in visual screenshots:
 
 **Catalog Database created**
-![04_catalog_db_created](images/04_catalog_db_created.png)
-<br><br><br>
+![04_catalog_db_created](images/04_catalog_db_created.png)<br><br><br>
 **Creating crawler for bronze layer**
 ![05_creating_bronze_crawler](images/05_creating_bronze_crawler.png)
