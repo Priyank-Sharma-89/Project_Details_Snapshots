@@ -65,8 +65,14 @@ Step 6: Again, step 3 & 5 repeated for moving data from silver to gold layer.
 **This error was due to incomplete/improper permissions attached to Glue IAM role. I fixed this issue, by giving full read/write permission to IAM role. While finding solutions to fix this issue, I got to know that in maximum possible production scenarios, it is not recommended to give full permissions to any service related IAM role. Here I give it to just continue with demo project.**
 ![15_fixing_iam_issue](images/15_fixing_iam_issue.png)
 
-![15_fixing_iam_issue_02](images/15_fixing_iam_issue_02.png)
-
-
+![15_fixing_iam_issue_02](images/15_fixing_iam_issue_02.png)<br><br><br>
 **After this fix, my ETL job ran successfully**
-![16_etl_job_success](images/16_etl_job_success.png)
+![16_etl_job_success](images/16_etl_job_success.png)<br><br><br>
+**Silver layer output after job run**
+![17_silver_layer_output](images/17_silver_layer_output.png)<br><br><br>
+![18_silver_layer_crawler_table](images/18_silver_layer_crawler_table.png)<br><br>
+**Query error: When I tried to view the data in Athena (this is the very first time I was using Athena), I got this error**<br>
+**Initially I could not understand the exact reason of this error, however I pasted the error in chatgpt, and immediately got to know the reason**<br>
+**It was caused due to double quotes used in where clause. In Athena (Presto SQL engine), double quotes are treated as column name, not string literal, so Athena thinks this is a column name, not a string value.**
+**That’s why error says: Column 'cust1073' cannot be resolved**
+![17_silver_layer_output](images/17_silver_layer_output.png)<br><br><br>
