@@ -108,5 +108,24 @@ Step 6: Again, step 3 & 5 repeated for moving data from silver to gold layer.
 
 **It was caused due to double quotes used in where clause. In Athena (Presto SQL engine), double quotes are treated as column name, not string literal, so Athena thinks this is a column name, not a string value.**
 
-**That’s why error says: Column 'cust1073' cannot be resolved**
-![19_query_error](images/19_query_error.png)<br><br><br>
+**That’s why error says: Column 'cust1073' cannot be resolved. Fixed the issue by using single quotes: WHERE customer_id = 'CUST1073'**
+![19_query_error](images/19_query_error.png)
+
+**After getting familiar with navigation, options & UI, I started recreating ETL, with proper actual required data cleaning transformations**
+
+**In doing so, one more issue was waiting for me. When I tried to use 'Filter' transformation from Glue transformation tab options, I could not use exactly how I wanted to filter the data**
+![20_filter_transformation_issue](images/20_filter_transformation_issue.png)
+
+**I was trying to apply this condition: product IS NOT NULL AND product != '' AND quantity IS NOT NULL AND order_date IS NOT NULL AND order_date != '',but as you can see in screenshot, under 'Operator' filed, I was not getting option to put "!="**
+
+**After doing google what can be done, I got fix that I can use SQL query option from transformation menu**
+![21_etl_changes_01](images/21_etl_changes_01.png)
+
+
+**This worked, and you can see, I verified the result by checking row count of both bronze and silver table. You can see the lesser row count in silver table, means our filter transformation worked**
+
+Bronze Table count
+![21_etl_changes_02](images/21_etl_changes_02.png)
+
+Silver Table count
+![21_etl_changes_03](images/21_etl_changes_03.png)
