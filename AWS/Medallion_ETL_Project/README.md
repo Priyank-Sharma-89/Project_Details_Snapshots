@@ -207,3 +207,20 @@ Gold layer table created in Database via Catalog
 
 
 So, as you can observer, this AWS project, gave me more learning apart from usual ETL pipeline creation. I was thinking that it will be as easy or smooth as Azure, or atleast will be a similar experience, but AWS taught me some things really well by throwing notorious error here and there. And honestly, I really felt happy, because I learnt how to tackle errors, how I can handle them, how to fix them etc.
+
+**Moving one step further after creating ETL, I also tried to find answers to below 2 doubts (honestly speaking I aksed my doubts to chatgpt, to get answers)**
+
+**Even though my data is so miniscule and small in kbs, still my ETL job took 1 min 24 secs to finish. Why so much time in such a small dataset?**
+What I got to know, The execution time is dominated by cluster initialization overhead in AWS Glue, not the data processing itself. For large-scale data, this overhead becomes negligible compared to actual processing time.
+**What's really happening**
+In Glue, when we run a job,<br>
+- Step 1 → Spin up Spark cluster (30–60 sec)
+- Step 2 → Load libraries & environment
+- Step 3 → Read data
+- Step 4 → Process data (your SQL)
+- Step 5 → Write output
+- Step 6 → Tear down cluster<br>
+
+For my tiny dataset;<br>
+- Processing time = maybe 2–3 seconds
+- Glue overhead = ~60–80 seconds
