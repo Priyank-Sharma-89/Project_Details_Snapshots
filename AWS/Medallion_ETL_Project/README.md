@@ -10,7 +10,7 @@
 | ------ | ------------------------------- |
 | Bronze | Raw data                        |
 | Silver | Clean structured data           |
-| Gold   | Business-ready analytics tables |
+| Gold   | Business Analytics ready aggregated data |
 
 ![02_medallian_setup](images/02_medallian_setup.png)
 
