@@ -224,3 +224,16 @@ In Glue, when we run a job,<br>
 For my tiny dataset;<br>
 - Processing time = maybe 2–3 seconds
 - Glue overhead = ~60–80 seconds
+
+Key Insight: my job is not slow, Glue startup time is constant overhead
+
+
+**Why 5 Parquet files in output?**
+Short answer: Because Spark processes data in parallel using multiple partitions
+
+What's happening internally:
+- Data → split into partitions
+- Each partition → processed by one executor
+- Each executor → writes one output file
+
+So, 5 partitions → 5 output files
