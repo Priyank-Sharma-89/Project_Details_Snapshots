@@ -13,6 +13,18 @@ Just like Azure Medallion project, this is doing exactly the same use-case.
 | Silver | Clean structured data           |
 | Gold   | Business Analytics ready aggregated data |
 
+
+**Data Issues which we will fix in Silver layer**
+
+**1. Mixed date formates**
+| Order_Date  |
+| ------ |
+| 2024-01-05 |
+| 05-01-2024 |
+| 2024/01/05 |
+| (blank) |
+
+
 **Medallion Layer Setup**
 ![02_medallian_setup](images/02_medallian_setup.png)
 
